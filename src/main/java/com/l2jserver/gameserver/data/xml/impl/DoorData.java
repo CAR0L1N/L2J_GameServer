@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2021 L2J Server
+ * Copyright © 2004-2022 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -116,7 +116,7 @@ public class DoorData implements IXmlReader {
 		L2DoorTemplate template = new L2DoorTemplate(set);
 		L2DoorInstance door = new L2DoorInstance(template);
 		door.setCurrentHp(door.getMaxHp());
-		door.spawnMe(template.getX(), template.getY(), template.getZ());
+		door.spawnMe(template.getHingeX(), template.getHingeY(), template.getHingeZ());
 		putDoor(door, MapRegionManager.getInstance().getMapRegionLocId(door));
 	}
 	

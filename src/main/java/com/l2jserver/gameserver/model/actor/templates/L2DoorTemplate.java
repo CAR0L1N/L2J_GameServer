@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2021 L2J Server
+ * Copyright © 2004-2022 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -35,6 +35,8 @@ public class L2DoorTemplate extends L2CharTemplate implements IIdentifiable {
 	private final int _posX;
 	private final int _posY;
 	private final int _posZ;
+	private final int _interactX;
+	private final int _interactY;
 	private final int _emmiter;
 	private final int _childDoorId;
 	private final String _name;
@@ -77,6 +79,8 @@ public class L2DoorTemplate extends L2CharTemplate implements IIdentifiable {
 			_nodeX[i] = Integer.parseInt(split[0]);
 			_nodeY[i] = Integer.parseInt(split[1]);
 		}
+		_interactX = (_nodeX[0] + _nodeX[1] + _nodeX[2] + _nodeX[3]) / 4;
+		_interactY = (_nodeY[0] + _nodeY[1] + _nodeY[2] + _nodeY[3]) / 4;
 		
 		// optional
 		_emmiter = set.getInt("emitter_id", 0);
@@ -136,15 +140,27 @@ public class L2DoorTemplate extends L2CharTemplate implements IIdentifiable {
 		return _height;
 	}
 	
-	public int getX() {
-		return _posX;
+	public int getInteractX() {
+		return _interactX;
 	}
 	
-	public int getY() {
+	public int getInteractY() {
+		return _interactY;
+	}
+	
+	public int getInteractZ() {
+		return _nodeZ;
+	}
+	
+	public int getHingeX() {
+		return _posX;
+	}
+
+	public int getHingeY() {
 		return _posY;
 	}
 	
-	public int getZ() {
+	public int getHingeZ() {
 		return _posZ;
 	}
 	

@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2021 L2J Server
+ * Copyright © 2004-2022 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -253,7 +253,7 @@ public final class Instance {
 		final L2DoorInstance newdoor = new L2DoorInstance(new L2DoorTemplate(set));
 		newdoor.setInstanceId(getId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
-		newdoor.spawnMe(newdoor.getTemplate().getX(), newdoor.getTemplate().getY(), newdoor.getTemplate().getZ());
+		newdoor.spawnMe(newdoor.getHingeX(), newdoor.getHingeY(), newdoor.getHingeZ());
 		_doors.put(doorId, newdoor);
 	}
 	

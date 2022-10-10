@@ -1,5 +1,5 @@
 /*
- * Copyright © 2004-2021 L2J Server
+ * Copyright © 2004-2022 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -121,6 +121,33 @@ public class L2DoorInstance extends L2Character {
 			delay += Rnd.get(getTemplate().getRandomTime());
 		}
 		ThreadPoolManager.getInstance().scheduleGeneral(new TimerOpen(), delay * 1000);
+	}
+	
+	@Override
+	public int getX() {
+		return getTemplate().getInteractX();
+	}
+	
+	@Override
+	public int getY() {
+		return getTemplate().getInteractY();
+	}
+	
+	@Override
+	public int getZ() {
+		return getTemplate().getInteractZ();
+	}
+	
+	public int getHingeX() {
+		return getTemplate().getHingeX();
+	}
+	
+	public int getHingeY() {
+		return getTemplate().getHingeX();
+	}
+	
+	public int getHingeZ() {
+		return getTemplate().getHingeX();
 	}
 	
 	@Override
