@@ -34,6 +34,16 @@ public class FileLogFormatter extends Formatter
 	{
 		StringBuilder output = new StringBuilder();
 		
-		return output.append(dateFmt.format(new Date(record.getMillis()))).append(TAB).append(record.getLevel().getName()).append(TAB).append(record.getThreadID()).append(TAB).append(record.getLoggerName()).append(TAB).append(record.getMessage()).append(CRLF).toString();
+		return output.append(dateFmt.format(new Date(record.getMillis())))
+			.append(TAB)
+			.append(record.getLevel().getName())
+			.append(TAB)
+			.append(record.getLongThreadID())
+			.append(TAB)
+			.append(record.getLoggerName())
+			.append(TAB)
+			.append(record.getMessage())
+			.append(CRLF)
+			.toString();
 	}
 }
